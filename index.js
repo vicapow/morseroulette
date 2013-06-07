@@ -27,6 +27,9 @@ io.sockets.on('connection', function(socket){
     buzzers[socket.id] = false
     updateBuzzer(socket)
   })
+  socket.on('next', function(){
+    
+  })
   socket.on('disconnect', function(){
     delete buzzers[socket.id]
     updateBuzzer(socket)

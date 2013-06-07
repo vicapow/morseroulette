@@ -518,8 +518,19 @@ a { text-decoration: none; display: block; }
        -webkit-radial-gradient(100% 100%, circle, rgba(0,0,0,0) 9px, rgba(255, 187, 94, 1) 10px),
        -webkit-radial-gradient(100% 0, circle, rgba(0,0,0,0) 9px, rgba(255, 187, 94, 1) 10px),
        -webkit-radial-gradient(0 0, circle, rgba(0,0,0,0) 9px, rgba(255, 187, 94, 1) 10px);
+   background-image:
+     -moz-linear-gradient(right, rgba(255, 187, 94, 1) 0%, rgba(0,0,0,0.4) 100%),
+       -moz-linear-gradient(left, rgba(255, 187, 94, 1) 0%, rgba(0,0,0,0.4) 100%),
+       -moz-linear-gradient(bottom, rgba(0,0,0,0.4) 0%, rgba(255, 187, 94, 1) 100%),
+       -moz-linear-gradient(top, rgba(0,0,0,0.4) 0%, rgba(255, 187, 94, 1) 100%),
+        -moz-radial-gradient(0 100%, circle, rgba(0,0,0,0) 9px, rgba(255, 187, 94, 1) 10px),
+        -moz-radial-gradient(100% 100%, circle, rgba(0,0,0,0) 9px, rgba(255, 187, 94, 1) 10px),
+        -moz-radial-gradient(100% 0, circle, rgba(0,0,0,0) 9px, rgba(255, 187, 94, 1) 10px),
+        -moz-radial-gradient(0 0, circle, rgba(0,0,0,0) 9px, rgba(255, 187, 94, 1) 10px);
    background-position: 0% 50%, 100% 50%, 50% 100%, 50% 0%, bottom left, bottom right, top right, top left;
    -webkit-background-size: 4% 50%, 4% 50%, 85% 13%, 85% 13%, 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+   -moz-background-size: 4% 50%, 4% 50%, 85% 13%, 85% 13%, 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+   background-size: 4% 50%, 4% 50%, 85% 13%, 85% 13%, 50% 50%, 50% 50%, 50% 50%, 50% 50%;
    background-repeat: no-repeat;
    text-shadow: -1px -1px 0px #222;
    color: rgba(198, 145, 73, 1.0000);
@@ -537,6 +548,8 @@ canvas.response{
   background-color: white;
   background-image:
     -webkit-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+  background-image:
+    -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
   position: absolute;
   right:80px;
   top: 200px;
@@ -554,6 +567,11 @@ canvas.response{
      -webkit-linear-gradient(left, rgba(0,0,0,0) 80%, rgba(0,0,0,0.3) 100%),
      -webkit-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 20%),
      -webkit-repeating-linear-gradient(left, rgba(255, 187, 94, 1)  0px, rgba(202, 148, 75, 1.0000) 1px);
+     
+   background-image:
+      -moz-linear-gradient(left, rgba(0,0,0,0) 80%, rgba(0,0,0,0.3) 100%),
+      -moz-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 20%),
+      -moz-repeating-linear-gradient(left, rgba(255, 187, 94, 1)  0px, rgba(202, 148, 75, 1.0000) 1px);
 }
 
 .pen-bolt{
@@ -566,6 +584,8 @@ canvas.response{
   border-radius: 10px;
   background-image:
     -webkit-radial-gradient(20% 20%, circle, #777 0%, black 100%);
+  background-image:
+    -moz-radial-gradient(20% 20%, circle, #777 0%, black 100%);
 }
 .pen{
   position: absolute;
@@ -579,7 +599,166 @@ canvas.response{
     -webkit-linear-gradient(left, #777 0%, black 100%);
   -webkit-transform: rotate(-16deg);
   -webkit-transform-origin:   10px 0px;
+  background-image:
+    -moz-linear-gradient(left, #777 0%, black 100%);
+  -moz-transform: rotate(-16deg);
+  -moz-transform-origin:   10px 0px;
 }
 .pen.active{
   -webkit-transform: rotate(16deg);
+  -moz-transform: rotate(16deg);
+}
+
+.social{
+  width: 500px;
+  margin: auto;
+}
+.fb-like{
+  margin-top: 20px;
+  float: right;
+}
+
+.twitter-share-button{
+  clear:both;
+  float:right;
+}
+
+.next-button{
+  height: 50px;
+  background-color: #444;
+  background-image:
+    -webkit-repeating-linear-gradient(90deg, rgba(0,0,0,0.0) 0px, rgba(255,255,255,0.05) 1.5px),
+    -webkit-repeating-linear-gradient(90deg, rgba(0,0,0,0.0) 0px, rgba(255,255,255,0.05) 1px),
+    -webkit-radial-gradient(20% 10%, circle, rgba(255,255,255,0.3) 0%, rgba(255, 255, 255, 0) 40%),
+    -webkit-linear-gradient(top, rgba(0,0,0,0.0) 80%, rgba(0,0,0,0.9) 100%),
+    -webkit-linear-gradient(left, rgba(0,0,0,0.0) 90%, rgba(0,0,0,0.9) 100%),
+    -webkit-linear-gradient(right, rgba(0,0,0,0.0) 90%, rgba(0,0,0,0.9) 100%);
+  background-image:
+    -moz-repeating-linear-gradient(90deg, rgba(0,0,0,0.0) 0px, rgba(255,255,255,0.05) 1.5px),
+    -moz-repeating-linear-gradient(90deg, rgba(0,0,0,0.0) 0px, rgba(255,255,255,0.05) 1px),
+    -moz-radial-gradient(20% 10%, circle, rgba(255,255,255,0.3) 0%, rgba(255, 255, 255, 0) 40%),
+    -moz-linear-gradient(top, rgba(0,0,0,0.0) 80%, rgba(0,0,0,0.9) 100%),
+    -moz-linear-gradient(left, rgba(0,0,0,0.0) 90%, rgba(0,0,0,0.9) 100%),
+    -moz-linear-gradient(right, rgba(0,0,0,0.0) 90%, rgba(0,0,0,0.9) 100%);
+  position: absolute;
+  bottom: 100px;
+  left: 140px;
+  font-size: 1.5em;
+  height: 1.5em;
+  line-height: 1.3em;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  border: 2px solid black;
+  color: #999;
+  text-shadow: -1px -1px 1px black;
+  box-shadow: 0px 0px 10px 1px black, inset 0px 0px 0px 0px black;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  cursor: pointer;
+}
+.next-button:active{
+  box-shadow: 0px 0px 0px 0px black, inset 0px 0px 10px 3px black;
+}
+
+@-webkit-keyframes dialog-anim{
+  0%{
+    -webkit-transform: rotate3d(1,0,0,0deg);
+  }
+  50%{
+    -webkit-transform: rotate3d(1,0,0,180deg);
+  }
+  100%{
+    -webkit-transform: rotate3d(1,0,0,0deg);
+  }
+}
+
+@-moz-keyframes dialog-anim{
+  0%{
+    -moz-transform: rotate3d(1,0,0,0deg);
+  }
+  50%{
+    -moz-transform: rotate3d(1,0,0,180deg);
+  }
+  100%{
+    -moz-transform: rotate3d(1,0,0,0deg);
+  }
+}
+
+// yo dawg...
+.dialog-container-container{
+  position: absolute;
+  left: 100px;
+  bottom: 170px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 150px;
+  height: 40px;
+  box-shadow: inset 3px 3px 10px 3px;
+}
+.dialog-container{
+  width: 150px;
+  height: 40px;
+  position: absolute;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  //-webkit-animation: dialog-anim 10s linear infinite;
+  .back-plat{
+    background-color: green;
+    width: 150px;
+    height: 40px;
+    position: absolute;
+    left:0px;
+    top:0px;
+    background-color: rgba(255, 187, 94, 1);
+    -webkit-transform: translateZ(-10px);
+    -webkit-transition: all 1s;
+    -moz-transform: translateZ(-10px);
+    -moz-transition: all 1s;
+    background-image: url('bg.jpg');
+  }
+  .top-plat{
+    background-color: rgba(135, 99, 50, 1.0000);
+    width: 150px;
+    height: 20px;
+    position: absolute;
+    left:0px;
+    top:0px;
+    -webkit-transform: rotate3d(1,0,0,90deg) translate3d(0,0,-30px);
+    -webkit-transition: all 2s;
+    -moz-transform: rotate3d(1,0,0,90deg) translate3d(0,0,-30px);
+    -moz-transition: all 2s;
+  }
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+}
+
+
+.dialog-container.active{
+  -webkit-transform: rotate3d(1,0,0,180deg);
+  -moz-transform: rotate3d(1,0,0,180deg);
+  .top-plat{
+    background-color: rgba(255, 187, 94, 1);
+  }
+}
+
+.your-partner-left{
+  position: absolute;
+  left:0px;
+  top:0px;
+  width: 150px;
+  height: 40px;
+  font-size: 1.3em;
+  line-height: 1.8em;
+  background-color: rgba(255, 187, 94, 1);
+  text-shadow: -1px -1px 0px #222;
+  color: rgba(127, 93, 47, 1.0000);
+  -webkit-transform: translateZ(10px);
+  -moz-transform: translateZ(10px);
+  background-image:
+  -webkit-repeating-linear-gradient(left, @darkGold 0px, @darkerGold 100%),
+  -webkit-repeating-linear-gradient(top, @darkerGold 0px, @lightGold 2px);
+  background-image:
+  -moz-repeating-linear-gradient(left, @darkGold 0px, @darkerGold 100%),
+  -moz-repeating-linear-gradient(top, @darkerGold 0px, @lightGold 2px);
 }
