@@ -1,0 +1,17 @@
+{
+  "name": "morseroulette.com",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "dependencies": {
+    "express": "~3.2.6",
+    "socket.io": "~0.9.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Victor Powell <vicapow@gmail.com>",
+  "license": "BSD"
+}
