@@ -377,7 +377,7 @@ a { text-decoration: none; display: block; }
     -webkit-linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.0 ) 30%, rgba(255,255,255, 0.4) 80%);
   background-image:
     -moz-linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.0 ) 30%, rgba(255,255,255, 0.4) 80%);
-  -webkit-transform: rotate3d(0,1,0,80deg);
+  -webkit-transform: rotate3d(0,1,0,80deg) translate3d(110px,0,-20px);
   -moz-transform: rotate3d(0,1,0,80deg);
   z-index: 3;
 }
@@ -479,7 +479,7 @@ a { text-decoration: none; display: block; }
   z-index: 6;
   border-radius: 20px 40px 40px 20px;
   -webkit-transform-origin: 0px 0px;
-  -webkit-transform: rotate3d(0,1,0,50deg);
+  -webkit-transform: rotate3d(0,1,0,50deg) translate3d(-50px,0,50px);
   -moz-transform-origin: 0px 0px;
   -moz-transform: rotate3d(0,1,0,50deg);
   background-image:
@@ -731,12 +731,14 @@ canvas.response{
   }
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
+  -webkit-transform: rotate3d(1, 0, 0, 180deg);
+  -moz-transform: rotate3d(1, 0, 0, 180deg);
 }
 
 
 .dialog-container.active{
-  -webkit-transform: rotate3d(1,0,0,180deg);
-  -moz-transform: rotate3d(1,0,0,180deg);
+  -webkit-transform: rotate3d(1, 0, 0, 0deg);
+  -moz-transform: rotate3d(1, 0, 0, 0deg);
   .top-plat{
     background-color: rgba(255, 187, 94, 1);
   }
@@ -756,9 +758,9 @@ canvas.response{
   -webkit-transform: translateZ(10px);
   -moz-transform: translateZ(10px);
   background-image:
-  -webkit-repeating-linear-gradient(left, @darkGold 0px, @darkerGold 100%),
-  -webkit-repeating-linear-gradient(top, @darkerGold 0px, @lightGold 2px);
+    -webkit-repeating-linear-gradient(left, @darkGold 0px, @darkerGold 100%)
+    , -webkit-repeating-linear-gradient(top, @darkerGold 0px, @lightGold 2px);
   background-image:
-  -moz-repeating-linear-gradient(left, @darkGold 0px, @darkerGold 100%),
-  -moz-repeating-linear-gradient(top, @darkerGold 0px, @lightGold 2px);
+    -moz-repeating-linear-gradient(left, @darkGold 0px, @darkerGold 100%)
+    , -moz-repeating-linear-gradient(top, @darkerGold 0px, @lightGold 2px);
 }
