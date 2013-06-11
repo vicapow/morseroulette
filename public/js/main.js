@@ -81,6 +81,7 @@ $(function(){
   $('body').on('mouseup touchstop', stopbeep)
   $('.handle').on('mousedown touchstart',startbeep)
   $('.next-button').on('mousedown touchstart', function(){
+    console.log('next')
     socket.emit('next')
   })
   
@@ -89,6 +90,7 @@ $(function(){
   socket.on('buzz', setBuzz)
   
   function setBuzz(data){
+    console.log('set buzz: ', data.isbuzzing)
     if(data.isbuzzing === isbuzzing) return
     isbuzzing = data.isbuzzing
     if(isbuzzing) audio.play()
@@ -99,10 +101,15 @@ $(function(){
     if(isbuzzing) $('.pen').addClass('active')
     else $('.pen').removeClass('active')
   }
+  socket.on('paired', function(){
+    console.log('paired!')
+    $('.dialog-container').addClass('active')
+  })
   
-  setInterval(function(){
-    $('.dialog-container').toggleClass('active')
-  }, 10000)
+  socket.on('lost-pair', function(){
+    console.log('lost pair')
+    $('.dialog-container').removeClass('active')
+  })
   
 })
 
