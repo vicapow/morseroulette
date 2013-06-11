@@ -27,12 +27,16 @@ io.sockets.on('connection', function(socket){
   socket.on('next', function(){
     var pair = pairs[socket.id]
     if(!pair) return searchNewPair(socket)
+    searchNewPair(pair.p1)
+    searchNewPair(pair.p2)
+  })
+  socket.on('leave-pair', function(){
+    var pair = pairs[socket.id]
+    if(!pair) return // already not in a pair
     delete pairs[pair.p1]
     delete pairs[pair.p2]
     pair.p1.emit('lost-pair')
     pair.p2.emit('lost-pair')
-    searchNewPair(pair.p1)
-    searchNewPair(pair.p2)
   })
   socket.on('disconnect', function(){
     var pair = pairs[socket.id]

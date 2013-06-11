@@ -43,6 +43,7 @@ $(function(){
   canvas.height = 300
   
   function startbeep(val){
+    ga('send', 'event', 'button', 'press', 'key')
     if(val !== false) val = true
     if(val === isbuzzing) return
     isbuzzing = val
@@ -53,7 +54,7 @@ $(function(){
     else socket.emit('beepstop')
   }
   function stopbeep(){
-    console.log('stop beep')
+    ga('send', 'event', 'button', 'release', 'key')
     startbeep(false)
     audio.currentTime = 0
     audio.pause()
@@ -81,8 +82,12 @@ $(function(){
   $('body').on('mouseup touchstop', stopbeep)
   $('.handle').on('mousedown touchstart',startbeep)
   $('.next-button').on('mousedown touchstart', function(){
-    console.log('next')
-    socket.emit('next')
+    ga('send', 'event', 'button', 'press', 'next')
+    socket.emit('leave-pair')
+    setTimeout(function(){
+      // try to connect to a new pair
+      socket.emit('next')
+    }, 1000)
   })
   
   var audio = createBeepSound()
@@ -90,7 +95,6 @@ $(function(){
   socket.on('buzz', setBuzz)
   
   function setBuzz(data){
-    console.log('set buzz: ', data.isbuzzing)
     if(data.isbuzzing === isbuzzing) return
     isbuzzing = data.isbuzzing
     if(isbuzzing) audio.play()
@@ -102,12 +106,12 @@ $(function(){
     else $('.pen').removeClass('active')
   }
   socket.on('paired', function(){
-    console.log('paired!')
+    ga('send', 'event', 'socket', 'paired', { 'nonInteraction' : 1 })
     $('.dialog-container').addClass('active')
   })
   
   socket.on('lost-pair', function(){
-    console.log('lost pair')
+    ga('send', 'event', 'socket', 'lost-pair', { 'nonInteraction' : 1 })
     $('.dialog-container').removeClass('active')
   })
   
