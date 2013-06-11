@@ -8,8 +8,14 @@ var pairs = {}
 // the unpaired socket. (there is only ever 0 or 1 unpaired socket)
 var unpaired = []
 var isbuzzing = {}
+var connections = 0
+
+app.get('/stats', function(req, res){
+  res.send('pairs: ' + (Object.keys(pairs).length / 2) + ' connections: ' + connections)
+})
 
 io.sockets.on('connection', function(socket){
+  connections++
   searchNewPair(socket)
   
   socket.on('beepstart', function(data){
