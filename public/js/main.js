@@ -80,8 +80,12 @@ $(function(){
   })()
   
   $('body').on('mouseup touchend', stopbeep)
-  $('.handle').on('mousedown touchstart',startbeep)
-  $('.next-button').on('mousedown touchstart', function(){
+  $('.handle').on('mousedown touchstart',function(e){
+    e.preventDefault() // prevent double tap to zoom on the telegraph key button
+    startbeep()
+  })
+  $('.next-button').on('mousedown touchstart', function(e){
+    e.preventDefault()
     ga('send', 'event', 'button', 'press', 'next')
     socket.emit('leave-pair')
     setTimeout(function(){
