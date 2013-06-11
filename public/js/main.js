@@ -79,7 +79,7 @@ $(function(){
     }, 10)
   })()
   
-  $('body').on('mouseup touchstop', stopbeep)
+  $('body').on('mouseup touchend', stopbeep)
   $('.handle').on('mousedown touchstart',startbeep)
   $('.next-button').on('mousedown touchstart', function(){
     ga('send', 'event', 'button', 'press', 'next')
